@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie A Women - Coming Soon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030303;
+            color: white;
+            overflow-x: hidden;
+        }
+        .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .bg-grid {
+            background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            opacity: 0.03;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #d946ef, #a855f7, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(24, 24, 27, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(63, 63, 70, 0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Background Elements -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-fuchsia-600/20 blur-[120px]"></div>
+        <div class="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] rounded-full bg-blue-600/10 blur-[100px]"></div>
+        <div class="absolute inset-0 bg-grid"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="p-6 md:p-10 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-gradient-to-br from-fuchsia-600 to-purple-700 rounded-lg flex items-center justify-center shadow-lg shadow-fuchsia-500/20">
+                <i data-lucide="trophy" class="text-white w-6 h-6"></i>
+            </div>
+            <span class="font-display font-bold text-xl tracking-tight uppercase">SERIE A <span class="text-fuchsia-500">WOMEN</span></span>
+        </div>
+
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-400">
+            <a href="#" class="hover:text-white transition-colors">News</a>
+            <a href="#" class="hover:text-white transition-colors">Squadre</a>
+            <a href="#" class="hover:text-white transition-colors">Classifica</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col items-center justify-center px-6 py-12 text-center max-w-5xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/20 text-fuchsia-400 text-xs font-bold uppercase tracking-widest mb-8">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-fuchsia-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-fuchsia-500"></span>
+            </span>
+            Coming Soon
+        </div>
+
+        <h1 class="font-display text-5xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] mb-6">
+            IL NUOVO VOLTO DEL <br>
+            <span class="gradient-text">CALCIO FEMMINILE</span>
+        </h1>
+
+        <p class="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+            Stiamo costruendo la casa definitiva per la Serie A Femminile. 
+            Risultati, analisi, interviste esclusive e tutto il mondo del calcio in rosa in un unico portale.
+        </p>
+
+        <!-- Form -->
+        <div class="w-full max-w-md mx-auto" id="form-container">
+            <form id="notify-form" class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-fuchsia-600 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                <div class="relative flex flex-col md:flex-row gap-2 p-2 bg-zinc-900 border border-zinc-800 rounded-2xl">
+                    <div class="flex-1 flex items-center px-4 gap-3">
+                        <i data-lucide="mail" class="w-5 h-5 text-zinc-500"></i>
+                        <input
+                            type="email"
+                            required
+                            placeholder="Inserisci la tua email"
+                            class="w-full bg-transparent border-none focus:ring-0 text-white placeholder:text-zinc-600 py-3 outline-none"
+                        >
+                    </div>
+                    <button
+                        type="submit"
+                        class="bg-white text-black font-bold px-6 py-3 rounded-xl hover:bg-fuchsia-500 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 group"
+                    >
+                        Avvisami
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+            </form>
+            <div id="success-message" class="hidden p-6 bg-fuchsia-500/10 border border-fuchsia-500/30 rounded-2xl text-fuchsia-400 font-medium flex items-center justify-center gap-3">
+                <i data-lucide="bell" class="w-5 h-5 animate-bounce"></i>
+                Ti avviseremo non appena saremo online!
+            </div>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24 w-full">
+            <div class="p-6 rounded-3xl glass-card hover:border-fuchsia-500/30 transition-colors group">
+                <div class="w-12 h-12 rounded-2xl bg-fuchsia-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i data-lucide="globe" class="w-6 h-6 text-fuchsia-500"></i>
+                </div>
+                <h3 class="font-display font-bold text-xl mb-2 text-white">Copertura Totale</h3>
+                <p class="text-zinc-500 text-sm">Ogni partita, ogni gol, ogni emozione della Serie A Femminile raccontata in tempo reale.</p>
+            </div>
+            <div class="p-6 rounded-3xl glass-card hover:border-purple-500/30 transition-colors group">
+                <div class="w-12 h-12 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i data-lucide="users" class="w-6 h-6 text-purple-500"></i>
+                </div>
+                <h3 class="font-display font-bold text-xl mb-2 text-white">Community</h3>
+                <p class="text-zinc-500 text-sm">Uno spazio dedicato ai tifosi per discutere, condividere e supportare le proprie campionesse.</p>
+            </div>
+            <div class="p-6 rounded-3xl glass-card hover:border-blue-500/30 transition-colors group">
+                <div class="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i data-lucide="trophy" class="w-6 h-6 text-blue-500"></i>
+                </div>
+                <h3 class="font-display font-bold text-xl mb-2 text-white">Esclusive</h3>
+                <p class="text-zinc-500 text-sm">Interviste inedite, dietro le quinte e approfondimenti tattici che non troverai altrove.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="p-10 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-zinc-900">
+        <div class="text-zinc-500 text-sm">
+            © <span id="year"></span> serieawomen.it - Tutti i diritti riservati.
+        </div>
+        
+        <div class="flex items-center gap-6">
+            <a href="#" class="text-zinc-500 hover:text-fuchsia-500 transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            <a href="#" class="text-zinc-500 hover:text-blue-400 transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+            <a href="#" class="text-zinc-500 hover:text-blue-600 transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+        </div>
+
+        <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-zinc-600">
+            <a href="#" class="hover:text-white transition-colors">Privacy</a>
+            <span class="w-1 h-1 rounded-full bg-zinc-800"></span>
+            <a href="#" class="hover:text-white transition-colors">Contatti</a>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Handle Form Submission
+        const form = document.getElementById('notify-form');
+        const successMessage = document.getElementById('success-message');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            form.classList.add('hidden');
+            successMessage.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
